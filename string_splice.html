@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>splice() Method Example</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background: linear-gradient(
+                135deg,
+                #ffe6f0,
+                #ffc0cb
+            );
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .container{
+            width:700px;
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        h1{
+            color:#d63384;
+            margin-bottom:25px;
+        }
+
+        .buttons{
+            margin-bottom:25px;
+        }
+
+        button{
+            padding:12px 20px;
+            margin:10px;
+            border:none;
+            border-radius:10px;
+            background:#ff69b4;
+            color:white;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#ff1493;
+        }
+
+        .box{
+            background:#fff0f5;
+            padding:25px;
+            border-radius:15px;
+            min-height:220px;
+            text-align:left;
+            line-height:2;
+            font-size:20px;
+            color:#444;
+        }
+
+        .highlight{
+            color:#c2185b;
+            font-weight:bold;
+        }
+
+        .output-text{
+            text-align:center;
+            font-size:40px;
+            color:#d63384;
+            font-weight:bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>splice() Method Example</h1>
+
+        <div class="buttons">
+
+            <button onclick="showInput()">
+                Input
+            </button>
+
+            <button onclick="showMethod()">
+                Method
+            </button>
+
+            <button onclick="showOutput()">
+                Output
+            </button>
+
+        </div>
+
+        <div class="box" id="display">
+
+            Click any button above
+
+        </div>
+
+    </div>
+
+    <script>
+
+        function showInput(){
+
+            document.getElementById("display").innerHTML =
+
+            `
+                <h2>Input</h2>
+
+                Original String:<br><br>
+
+                <span class="highlight">
+                    INDIA
+                </span>
+            `;
+        }
+
+        function showMethod(){
+
+            document.getElementById("display").innerHTML =
+
+            `
+                <h2>Method</h2>
+
+                1. split("") converts string into array.<br><br>
+
+                INDIA becomes:<br>
+
+                <span class="highlight">
+                ["I","N","D","I","A"]
+                </span><br><br>
+
+                2. splice(3,0,"O","N","E","S") adds letters.<br><br>
+
+                3. join("") converts array into string.
+            `;
+        }
+
+        function showOutput(){
+
+            let string = "INDIA";
+
+            let arr = string.split("");
+
+            arr.splice(3,0,"O","N","E","S");
+
+            let result = arr.join("");
+
+            document.getElementById("display").innerHTML =
+
+            `
+                <h2>Output</h2>
+
+                <div class="output-text">
+                    ${result}
+                </div>
+            `;
+        }
+
+    </script>
+
+</body>
+</html>
